@@ -97,15 +97,15 @@ Map<String, dynamic> _$A2ATaskStatusToJson(A2ATaskStatus instance) =>
     };
 
 const _$A2ATaskStateEnumMap = {
-  A2ATaskState.submitted: 'submitted',
-  A2ATaskState.working: 'working',
-  A2ATaskState.inputRequired: 'input-required',
-  A2ATaskState.completed: 'completed',
-  A2ATaskState.canceled: 'canceled',
-  A2ATaskState.failed: 'failed',
-  A2ATaskState.rejected: 'rejected',
-  A2ATaskState.authRequired: 'auth-required',
-  A2ATaskState.unknown: 'unknown',
+  A2ATaskState.submitted: 'TASK_STATE_SUBMITTED',
+  A2ATaskState.working: 'TASK_STATE_WORKING',
+  A2ATaskState.inputRequired: 'TASK_STATE_INPUT_REQUIRED',
+  A2ATaskState.completed: 'TASK_STATE_COMPLETED',
+  A2ATaskState.canceled: 'TASK_STATE_CANCELED',
+  A2ATaskState.failed: 'TASK_STATE_FAILED',
+  A2ATaskState.rejected: 'TASK_STATE_REJECTED',
+  A2ATaskState.authRequired: 'TASK_STATE_AUTH_REQUIRED',
+  A2ATaskState.unknown: 'TASK_STATE_UNKNOWN',
 };
 
 A2AJsonRpcRequest _$A2AJsonRpcRequestFromJson(Map<String, dynamic> json) =>

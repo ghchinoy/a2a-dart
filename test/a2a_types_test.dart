@@ -953,14 +953,7 @@ void main() {
     });
     test('A2APart unknown part kind', () {
       var part = A2APart();
-      var json = <String, dynamic>{};
-
-      final textPart = A2ATextPart()
-        ..metadata = {'First': 1}
-        ..text = 'The text';
-      part = textPart;
-      json = part.toJson();
-      part = A2APart();
+      final json = <String, dynamic>{'unknown_key': 'some_value'};
       part = A2APart.fromJson(json);
       expect(part.toJson(), {});
     });
