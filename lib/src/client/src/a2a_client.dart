@@ -726,5 +726,12 @@ class A2AClient {
   }
 
   // Construction timer callback to get the agent card
-  Future<void> _getAgentCard() async => await _fetchAndCacheAgentCard();
+  Future<void> _getAgentCard() async {
+    try {
+      await _fetchAndCacheAgentCard();
+    } catch (e) {
+      // Ignore background fetch errors to prevent app crashes when server is down
+      print('Background Agent Card fetch failed: \$e');
+    }
+  }
 }
