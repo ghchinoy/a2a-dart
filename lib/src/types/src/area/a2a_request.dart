@@ -11,13 +11,13 @@ part of '../../a2a_types.dart';
 class A2ARequest {
   static const messageSend = 'SendMessage';
   static const messageStream = 'SendStreamingMessage';
-  static const tasksGet = 'tasks/get';
-  static const tasksCancel = 'tasks/cancel';
-  static const tasksPncSet = 'tasks/pushNotificationConfig/set';
-  static const tasksPncGet = 'tasks/pushNotificationConfig/get';
-  static const tasksPncList = 'tasks/pushNotificationConfig/list';
-  static const tasksPncDelete = 'tasks/pushNotificationConfig/delete';
-  static const tasksResubscribe = 'tasks/resubscribe';
+  static const tasksGet = 'GetTask';
+  static const tasksCancel = 'CancelTask';
+  static const tasksPncSet = 'CreateTaskPushNotificationConfig';
+  static const tasksPncGet = 'GetTaskPushNotificationConfig';
+  static const tasksPncList = 'ListTaskPushNotificationConfigs';
+  static const tasksPncDelete = 'DeleteTaskPushNotificationConfig';
+  static const tasksResubscribe = 'SubscribeToTask';
 
   /// Set if a valid request cannot be formed by [fromJson].
   @JsonKey(includeFromJson: false)
@@ -287,7 +287,7 @@ final class A2ATaskResubscriptionRequest extends A2ARequest {
 
   /// A String containing the name of the method to be invoked.
   @JsonKey(includeToJson: true, includeFromJson: false)
-  String method = 'tasks/resubscribe';
+  String method = A2ARequest.tasksResubscribe;
 
   A2ATaskIdParams? params;
 
