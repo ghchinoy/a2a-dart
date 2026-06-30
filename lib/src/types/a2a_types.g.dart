@@ -637,7 +637,9 @@ Map<String, dynamic> _$A2AFilePartToJson(A2AFilePart instance) =>
     };
 
 A2ADataPart _$A2ADataPartFromJson(Map<String, dynamic> json) => A2ADataPart()
-  ..data = json['data'] as Map<String, dynamic>
+  // data is dynamic: may be a Map (v0.9 single envelope) or a List (v1.0
+  // ordered message list). No cast — preserve the runtime type as-is.
+  ..data = json['data']
   ..metadata = json['metadata'] as Map<String, dynamic>?;
 
 Map<String, dynamic> _$A2ADataPartToJson(A2ADataPart instance) =>

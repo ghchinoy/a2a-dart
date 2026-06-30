@@ -86,8 +86,11 @@ final class A2AFilePart extends A2APart {
 /// Represents a structured data segment (e.g., JSON) within a message or artifact.
 @JsonSerializable(explicitToJson: true)
 final class A2ADataPart extends A2APart {
-  /// Structured data content
-  A2ASV data = {};
+  /// Structured data content.
+  /// Typed as [dynamic] to support any JSON value (object, array, primitive).
+  /// A2UI v1.0 sends an ordered List of message envelopes; v0.9 sent a single
+  /// Map. Both are valid per the A2A DataPart spec.
+  dynamic data;
 
   /// Part type - data for DataParts
   @JsonKey(includeToJson: true, includeFromJson: false)
